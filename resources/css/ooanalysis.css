@@ -142,17 +142,17 @@ div.survivors > div > div > div > img{
 @media only screen and (max-device-width: 480px) {
     div.green-mile > div > div > div > img,
     div.survivors > div > div > div > img{
-        width: 25px;
-        margin: 0px 15px 10px 0px;
-        border-radius: 50%;
-        margin-right: 15px;
-        box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+        width: 25px!important;;
+        margin: 0px 15px 10px 0px!important;;
+        border-radius: 50%!important;;
+        margin-right: 15px!important;;
+        box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)!important;;
     }
 
     .badge-survivors{
-        background-color: darkred;
+        background-color: darkred !important;;
         margin-left: 15px !important;
-        position: absolute;
+        position: absolute!important;;
         font-size: 10px !important;
     }
 }
