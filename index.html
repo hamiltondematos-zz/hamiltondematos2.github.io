@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta name="description" content="Final workshop for O.O. Analysis. 2015, 1st semester.">
+        <meta name="author" content="Hamilton Matos">
+
+        <link rel="icon" href="resources/images/favicon.ico">
+
+        <title>O.O.Analysis - Final workshop</title>
+
+        <link href="resources/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/ooanalysis.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+        <link href="resources/css/animate.css" rel="stylesheet" type="text/css"/>
+        <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    </head>
+
+    <body id="page-top" ng-app="analiseApp" ng-controller="formCtrl">
+
+        <!-- navbar-->
+        <nav class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" 
+                            data-toggle="collapse" data-target="#navbar" 
+                            aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#" ng-click="sort()">Start!</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse counterButtons">
+
+                    <button type="submit" class="btn btn-success" ng-click="decreaseSeconds()">-</button>
+                    <input type="number" placeholder="seconds" 
+                           class="input-sm" style="width: 95px" ng-model="seconds">                        
+
+                    <button type="submit" class="btn btn-success" ng-click="increaseSeconds()">+</button>                                                
+                    <button type="submit" class="btn btn-success" ng-click="pause()">{{ pauseButton}}</button>
+                </div><!--/.navbar-collapse -->
+            </div>
+        </nav>
+        <!-- /navbar-->
+
+        <!-- green mile -->
+        <div class="container green-mile">            
+            <div class="row">
+
+                <h3 class="green-mile">Green mile</h3>
+
+                <div class="col-md-12" style="display: flex">                    
+                    <div ng-repeat="name in allNamesOutput" class="slide-down" >
+                        <img src="resources/images/{{ name.pic}}.jpg" title="{{ name.name}}"/>                                   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /green mile -->
+
+        <!-- chosen -->        
+        <div class="container chosen">                
+            <p>
+                <span class="badge chosen-badge" 
+                      ng-style="counter <= 10 && counter % 2 == 0 ? {'background-color':'darkred'} : {'background-color':'#2c3e50'}">
+                    {{counter}} s
+                </span> 
+                <img src="resources/images/{{sortOutput.pic === undefined ? 'empty' : sortOutput.pic }}.jpg" 
+                     alt="{{ sortOutput.name}}"/>
+            </p>
+            <p class="name">{{sortOutput.name === undefined ? 'John Coffey' : sortOutput.name }}</p>
+            <hr class="star-light">
+            <p class="topic">{{sortedSubjectOutput.name === undefined ? 'The Green Mile' : sortedSubjectOutput.name }} - 
+                {{sortedSubjectOutput.desc === undefined ? 'Plot, cast, production, soundtrack, reception etc.' : sortedSubjectOutput.desc }}</p>
+        </div>        
+        <!-- /chosen -->        
+
+        <!-- survivors -->
+        <div class="container survivors">            
+            <div class="row">
+                
+                <h3 class="survivors">Survivors</h3>
+                
+                <div class="col-md-12" style="display: flex">                                        
+                    <div ng-repeat="name in chosenNames" class="slide-left">
+                        <span class="badge badge-survivors">{{ name.count }}</span>    
+                        <img src="resources/images/{{ name.pic}}.jpg" title="{{ name.name }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /survivors -->
+
+        <!-- topics -->
+        <div class="container topics">            
+            <div class="row">
+                
+                <h3 class="survivors">Topics</h3>
+                
+                <div class="col-md-12">                                        
+                    <span class="slide-left" ng-repeat="sub in chosenSubjects" title="{{ sub.desc}}">{{ sub.name}}</span>                    
+                </div>
+            </div>
+        </div>
+        <!-- /topics -->
+
+        <div class="container fter">
+            <footer><p>&copy; O.O.Analysis 2015</p></footer>
+        </div> 
+
+        <div class="scroll-top page-scroll visible-xs visible-sm">
+            <a class="btn btn-primary" href="#page-top">
+                <i class="fa fa-chevron-up"></i>
+            </a>
+        </div>
+
+        <script src="resources/js/angular.js" type="text/javascript"></script>
+        <script src="resources/js/angular-animate.js" type="text/javascript"></script>
+        <script src="resources/js/jquery-2.1.4.min.js" type="text/javascript"></script>
+        <script src="resources/js/bootstrap.min.js" type="text/javascript"></script>       
+        <script src="resources/js/ooanalysis.js" type="text/javascript"></script>
+    </body>
+</html>
