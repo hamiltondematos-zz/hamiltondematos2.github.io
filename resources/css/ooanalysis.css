@@ -132,20 +132,20 @@ div.topics > div > div > span{
 
 div.green-mile > div > div > div > img,
 div.survivors > div > div > div > img{
-    width: 35px;
+    width: 60px;
     margin: 0px 15px 10px 0px;
     border-radius: 50%;
-    margin-right: 15px;
+    margin-right: 25px;
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 
 @media only screen and (max-device-width: 480px) {
     div.green-mile > div > div > div > img,
     div.survivors > div > div > div > img{
-        width: 25px!important;;
+        width: 35px!important;;
         margin: 0px 15px 10px 0px!important;;
         border-radius: 50%!important;;
-        margin-right: 15px!important;;
+        margin-right: -15px!important;;
         box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28)!important;;
     }
 
@@ -154,6 +154,10 @@ div.survivors > div > div > div > img{
         margin-left: 15px !important;
         position: absolute!important;;
         font-size: 10px !important;
+    }
+
+    div.topics, .badge-survivors{
+        display: none;
     }
 }
 
