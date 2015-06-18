@@ -159,6 +159,10 @@ div.survivors > div > div > div > img{
     div.topics, .badge-survivors{
         display: none;
     }
+    
+    div.green-mile{
+        height: 100px;
+    }
 }
 
 nav.navbar, 
