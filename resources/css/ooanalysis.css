@@ -88,6 +88,9 @@ div.topics{
     width: 100%;
     /* display: table-cell; */
 }
+div.topics{
+    padding-bottom: 15px;
+}
 
 div.chosen{
     text-align: center;
@@ -100,6 +103,8 @@ div.chosen{
 div.chosen > p > img{
     width: 170px;
     border-radius: 50%;
+    -webkit-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    -moz-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
     box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
 }
 
@@ -159,7 +164,7 @@ div.survivors > div > div > div > img{
     div.topics, .badge-survivors{
         display: none;
     }
-    
+
     div.green-mile{
         height: 100px;
     }
@@ -305,4 +310,22 @@ span.chosen-badge{
     margin-left: 50px;
     position: absolute;
     font-size: 15px;
+}
+
+@-webkit-keyframes glow {
+    to {
+        border-color: red;
+        -webkit-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+        -moz-box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+        box-shadow: 0 0 4px rgba(0,0,0,.14),0 4px 8px rgba(0,0,0,.28);
+    }
+}
+
+.glower {
+    background-color: #ccc;
+    border: 15px solid transparent;
+    -webkit-animation: glow 1.0s infinite alternate;  
+    -webkit-transition: border 1.0s linear, box-shadow 1.0s linear;
+    -moz-transition: border 1.0s linear, box-shadow 1.0s linear;
+    transition: border 1.0s linear, box-shadow 1.0s linear;
 }

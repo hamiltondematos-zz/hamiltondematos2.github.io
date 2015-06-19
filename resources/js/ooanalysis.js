@@ -62,18 +62,26 @@ app.controller('formCtrl', function ($scope, $timeout) {
     $scope.seconds = 180;
     $scope.counter = $scope.seconds;
 
+    $scope.$watch('seconds', function () {
+        if ($scope.seconds < 0) {
+            $scope.seconds = 0;
+        }
+        $scope.counter = $scope.seconds;
+    }, true);
+
     $scope.increaseSeconds = function () {
-        $scope.seconds++;
+        $scope.seconds = $scope.seconds + 30;
         $scope.counter = $scope.seconds;
     };
 
     $scope.decreaseSeconds = function () {
         if ($scope.seconds > 1) {
-            $scope.seconds--;
+            $scope.seconds = $scope.seconds - 30;
             $scope.counter = $scope.seconds;
         }
     };
 
+    $scope.startButton = 'Start !';
     $scope.pauseButton = 'Pause';
     $scope.allNamesOutput = names;
     $scope.chosenNames = chosenNames;
@@ -82,6 +90,8 @@ app.controller('formCtrl', function ($scope, $timeout) {
     var sortedSubjectElement = null;
 
     $scope.sort = function () {
+        $scope.startButton = 'Next !';
+
         if (sortedNameElement !== null && sortedSubjectElement !== null) {
             chosenNames.push(sortedNameElement);
             chosenSubjects.push(sortedSubjectElement);

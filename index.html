@@ -33,17 +33,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#" ng-click="sort()">Start!</a>
+                    <a class="navbar-brand" href="#" ng-click="sort()">{{ startButton }}</a>
                 </div>
+                
                 <div id="navbar" class="navbar-collapse collapse counterButtons">
-
                     <button type="submit" class="btn btn-success" ng-click="decreaseSeconds()">-</button>
                     <input type="number" placeholder="seconds" 
-                           class="input-sm" style="width: 95px" ng-model="seconds">                        
-
+                           class="input-sm" style="width: 95px" ng-model="seconds" >                        
                     <button type="submit" class="btn btn-success" ng-click="increaseSeconds()">+</button>                                                
-                    <button type="submit" class="btn btn-success" ng-click="pause()">{{ pauseButton}}</button>
+                    <button type="submit" class="btn btn-success" ng-click="pause()">{{ pauseButton }}</button>
                 </div><!--/.navbar-collapse -->
+            
             </div>
         </nav>
         <!-- /navbar-->
@@ -79,7 +79,7 @@
                 {{sortedSubjectOutput.desc === undefined ? 'Plot, cast, production, soundtrack, reception etc.' : sortedSubjectOutput.desc }}</p>
         </div>        
         <!-- /chosen -->        
-
+             
         <!-- survivors -->
         <div class="container survivors">            
             <div class="row">
@@ -99,7 +99,7 @@
         <!-- topics -->
         <div class="container topics">            
             <div class="row">
-                
+                            
                 <h3 class="survivors">Topics</h3>
                 
                 <div class="col-md-12">                                        
