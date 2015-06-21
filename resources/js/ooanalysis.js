@@ -89,7 +89,7 @@ app.controller('formCtrl', function ($scope, $timeout) {
     var sortedNameElement = null;
     var sortedSubjectElement = null;
 
-    $scope.sort = function () {
+    $scope.pickRandom = function () {
         $scope.startButton = 'Next !';
 
         if (sortedNameElement !== null && sortedSubjectElement !== null) {
@@ -139,7 +139,7 @@ function startTimer($scope, $timeout) {
         mytimeout = $timeout($scope.onTimeout, 1000);
         if ($scope.counter === -1) {
             $timeout.cancel(mytimeout);
-            $scope.sort();
+            $scope.pickRandom();
         }
     };
 
